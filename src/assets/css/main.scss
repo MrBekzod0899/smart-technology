@@ -1,0 +1,67 @@
+//**************** Font Family ***************\\
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&display=swap');
+//**************** Font Family ***************\\
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo 2',sans-serif;
+}
+
+@import './var';
+body{
+  margin: 0;
+}
+a{
+    text-decoration: none;
+    color: $title-text;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+}
+ul li a{
+    display: block;
+    color: $main-color;
+}
+.container{
+    width: 1300px;
+    margin:0 auto;
+}
+.container-fluid{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.row{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.col-6{
+    @include fb(50%);
+    padding: 0 10px;
+}
+.col-4{
+    @include fb(33.33%);
+    padding:0 10px;
+}
+.col-3{
+    @include fb(25%);
+    padding:0 10px;
+}
+.col-9{
+    @include fb(75%);
+    padding:0 10px;
+}
+.col-12{
+    @include fb(100%);
+    padding: 0 10px;
+}
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrapc;
+}

@@ -1,0 +1,50 @@
+@import '../../assets/css/var.scss';
+.header {
+    padding: 10px 0;
+    .container{
+        @include center;
+        .col-9{
+            @include center; 
+            .auth{
+                font-size: 16px;
+                margin-left: 20px;
+            } 
+        }     
+    }
+
+    &__contact{
+        @include center;
+        a{
+            margin-right:23px;
+        }
+    } 
+    &__worktime{
+        margin-right: 58px;
+        color: $light-grey;
+        font-size: 16px;
+    }
+    &__search{
+        padding: 6px 0;
+        flex-basis: 107px;
+        max-width: 107px;
+        width: 107px;
+        display: flex;
+        margin-right: 8px;
+        border-bottom: 1px solid $light-grey;
+        .input{
+            flex-basis: 100%;
+            font-size: 16px;
+            font-weight: 500;
+        }   
+        button{
+            border: none;
+            background: unset;
+            margin-right: 12px;
+        }
+    }
+    &__link{
+            img{
+                border: unset !important;
+            }
+     }
+}

@@ -1,0 +1,60 @@
+$main-color:#fff;
+$dark-blue:#2A5275;
+$light-blue:#4878A6;
+$orange:#F37748;
+$red:#D73838;
+$light-grey:#C8CACB;
+$dark-grey:#838688;
+$title-text:#070C11;
+$bredcrumb-text:#2A5275;
+$menubar:#0E1821;
+$green:#48A69B;
+
+
+@mixin fb($w) {
+    flex-basis: $w;
+    max-width: $w;
+    width: $w;
+}
+@mixin bg {
+    background: cover;
+    background-position: center center;
+    background-repeat: no-repeat ;
+}
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    padding: 16px 26px;
+    border-radius: 4px;
+    background-color: $dark-blue;
+    color: #fff;
+    cursor: pointer;
+    &.light{
+        background: $light-blue;
+    }
+    &.outline{
+        background: unset;
+        border: 1px solid $light-blue;
+        color: $light-blue;
+    }
+    &.little{
+        border: 1px solid $light-grey ;
+        width: 48px;
+        height: 48px;
+        @include center; 
+    }
+    &.none{
+        border: none;
+    }
+}
+.input{
+    background: unset;
+    border: none;
+    &.focus{
+        outline: none;
+    }
+}
