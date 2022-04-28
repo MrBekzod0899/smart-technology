@@ -10,7 +10,7 @@
 
 @import './var';
 body{
-  margin: 0;
+ box-sizing: border-box;
 }
 a{
     text-decoration: none;
@@ -28,17 +28,13 @@ ul li a{
     width: 1300px;
     margin:0 auto;
 }
-.container-fluid{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
+
 .row{
     display: flex;
     flex-wrap:wrap;
     width: 100%;
     margin-left: -10px;
-    margin-right: -10px;
+    margin-right: -10px
 }
 .col-6{
     @include fb(50%);
@@ -54,7 +50,8 @@ ul li a{
 }
 .col-9{
     @include fb(75%);
-    padding:0 10px;
+    padding:0 10px; 
+    
 }
 .col-12{
     @include fb(100%);
