@@ -24,10 +24,26 @@ const Slider = () => {
                     </div>
             </SplideSlide>
             <SplideSlide>
-                <img src={require('../../assets/img/slider2.png')} alt='slider'/>
+                <img src={require('../../assets/img/product2.png')} alt='slider'/>
+                <div className='slider-text'>
+                        <div className='slider-title'>
+                            <p>Apple Watch Series 6</p>
+                        </div>
+                        <div className='slider-info'>
+                            <p>уже в наличии</p>
+                        </div>
+                    </div>
             </SplideSlide>
             <SplideSlide>
-                <img src={require('../../assets/img/slider2.png')} alt='slider'/>
+                <img src={require('../../assets/img/product1.png')} alt='slider'/>
+                <div className='slider-text'>
+                        <div className='slider-title'>
+                            <p>Apple Watch Series 6</p>
+                        </div>
+                        <div className='slider-info'>
+                            <p>уже в наличии</p>
+                        </div>
+                    </div>
             </SplideSlide>
         </Splide>
     );

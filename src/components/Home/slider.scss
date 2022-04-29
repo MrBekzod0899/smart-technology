@@ -1,7 +1,13 @@
+@import '../../assets/css/var.scss';
 .slider{
     border-radius: 8px !important;
     overflow: hidden;  
     position: relative; 
+    background: $title-text;
+    height: 524px;
+    img{
+        overflow: hidden;
+    }
     .splide__pagination{
         display: flex;
         flex-wrap: nowrap;
@@ -36,7 +42,7 @@
         .slider-title{
             width: 50%;
             p{
-                font-size: 42px;
+                font-size: 48px;
                 font-weight: 700;
             }
         }
