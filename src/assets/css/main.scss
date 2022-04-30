@@ -25,7 +25,7 @@ ul li a{
     color: $main-color;
 }
 .container{
-    width: 1300px;
+    width: 90%;
     margin:0 auto;
 }
 
@@ -61,4 +61,11 @@ ul li a{
 .d-flex{
     display: flex;
     flex-wrap: wrapc;
+}
+
+@media (min-width:1440px) {
+    .container{
+        width: 90%;
+        margin:0 auto;
+    }
 }
