@@ -8,8 +8,8 @@
     font-family: 'Exo 2',sans-serif;
 }
 
-@import './var';
-body{
+@import './var'; 
+body{ 
  box-sizing: border-box;
 }
 a{
@@ -24,6 +24,7 @@ ul li a{
     display: block;
     color: $main-color;
 }
+
 .container{
     width: 90%;
     margin:0 auto;

@@ -5,8 +5,14 @@
     position: relative; 
     background: $title-text;
     height: 524px;
+    
+    display: flex !important;
+    align-items: center !important;
     img{
-        overflow: hidden;
+        object-fit: contain !important;
+        width: 100%;
+        object-position: center center !important;
+        height: 100% !important;
     }
     .splide__pagination{
         display: flex;

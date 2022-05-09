@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.scss'
 export default function Navbar() {
   const [show, setShow] = useState(false);
+  const [category, setCategory] = useState([]);
+  
+
+  useEffect(()=>{
+      fetch('http://localhost:3003/api/category')
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(data)
+        setCategory(data)
+      })
+  },[])
   return (
     <navbar className="navbar">
         <div className="container">
@@ -13,66 +24,18 @@ export default function Navbar() {
                     <span>Каталог товаров</span>
                   </div>
                   <ul className={`nav__list ${show && 'show'}`}>
-                    <li>
-                      <div className="nav__items">
-                        <img src={require('../../assets/img/cat1.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat2.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat3.svg').default} alt="category" />
-                          <span>Гироскутеры</span>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat4.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat5.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat6.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat7.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat8.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat8.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
-                    <li>
-                      <div className="nav__items">
-                      <img src={require('../../assets/img/cat8.svg').default} alt="category" />
-                        <span>Гироскутеры</span>
-                        </div>
-                    </li>
+                    {
+                      category.map(item=>{
+                        return(
+                          <li key={item._id}>
+                            <div className="nav__items">
+                              <img src={`http://localhost:3003/${item.Image}`} alt="category" />
+                              <span>{item.title}</span>
+                            </div>
+                          </li>
+                        )
+                      })
+                    }
                   </ul>
               </div>
               <div className="col-9">

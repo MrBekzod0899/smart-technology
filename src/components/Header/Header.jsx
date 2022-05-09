@@ -7,7 +7,7 @@ export default function Header() {
     <header className='header'>
       <div className='container'>  
         <Link to="/"className='col-3'>
-                <img src={logo} alt="logo"/>
+                <img src={require('../../assets/img/logo.svg').default} alt="logo"/>
         </Link>
         <div className="col-9">
         <div className="header__contact">
@@ -15,7 +15,6 @@ export default function Header() {
             <a href='+998337341399'>+998(33)7341399</a>
             <div className='header__worktime'>Пн-вс:c 10:00 до 21:00</div>
          </div>
-          
         <form  className='header__search'>
           <button><img src={require('../../assets/img/search-icon.svg').default} alt="search"/></button>
           <input className='input focus' placeholder='Поиск' type='text'/>
