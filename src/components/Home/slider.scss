@@ -4,8 +4,9 @@
     overflow: hidden;  
     position: relative; 
     background: $title-text;
+    padding: 0 10px;
+    box-sizing: border-box;
     height: 524px;
-    
     display: flex !important;
     align-items: center !important;
     img{
@@ -59,3 +60,14 @@
     }
 }
 
+@media (max-width:768px) {
+    .col-lg-9{
+        padding: 0 0 !important;
+    }
+    .slider{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        
+    }
+}

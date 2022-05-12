@@ -1,0 +1,13 @@
+.home{
+    padding: 20px;
+    background: #e5e5e5;
+    padding-bottom: 80px;
+}
+@media (max-width:768px){
+    .home{
+        width: 100%;
+        .container{
+            max-width: 100% !important;
+        }
+    }
+}

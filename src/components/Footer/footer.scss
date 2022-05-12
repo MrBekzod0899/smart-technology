@@ -1,0 +1,107 @@
+.footer {
+    width: 100%;
+    padding: 40px 0 0 0;
+    background-color: #EDF2F6;
+    .col-lg-3 {
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            li{
+                h5{
+                    color: #838688;
+                    margin-bottom: 20px;
+                    
+                }
+                span{
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+            }
+            .footer-phone{
+               span{
+                color:#070C11;
+                font-weight: 700 !important;
+               }
+            }
+            .footer-calendar{
+                color:#838688;
+                margin-bottom: 12px;
+
+            }
+        }
+    }
+    .footer-bottom{
+        padding: 38px 0 20px  0 !important;
+        border-top: 1px solid #C8CACB;
+        color: #838688;
+        display: flex;
+        justify-content:space-evenly;
+        .col-lg-4{
+            display: flex;
+            align-items: center;
+            margin:0;
+            padding: 0;
+            height: 100%;
+            ul{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                li{
+                    display: flex;
+                    height: 100%;
+                    align-items: center !important;
+                    i{
+                        font-size: 30px;
+                        margin:0 16px;
+                        color: #4878a6;
+                    }
+                }
+            }
+        }
+        .website-footer {
+            justify-content: flex-end;
+            a{
+                text-decoration: none;
+                color: #838688;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .footer-bottom{
+        justify-content: flex-start !important;
+        .website-footer{
+            justify-content: flex-start !important;
+        }
+        align-items: center;
+    }
+}
+
+@media (max-width:564px) {
+    .footer-bottom{
+        justify-content: flex-start !important;
+        .social-media{
+            order: 1 !important;
+            justify-content: flex-start !important;
+            align-items: flex-start;
+            ul{
+                padding-left: 0;
+                li:first-child(){
+                    margin-left: 0;
+                }
+            }
+        }
+        .website-footer{
+            order: 3;
+            justify-content: flex-start !important;
+        }
+        .footer-info{
+            order:2;
+        }
+        align-items: center;
+    }
+}

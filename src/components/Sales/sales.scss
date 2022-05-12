@@ -1,0 +1,46 @@
+.sales{
+    .row{
+        justify-content: space-between;
+        .col-lg-6{
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding: 0;
+            width: 49%;
+            .sales-product{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: #EDF2F6;
+                height: 180px;
+                .sales-info{
+                    padding: 50px;
+                    padding-bottom: 62px;
+                    padding-right: 30px;
+                    p{
+                        font-size: 28px;
+                        font-weight:700;
+                        line-height: 33.6px;
+                    }
+                }
+                .sales-image{
+                    padding: 4px 30px;
+                    img{
+                        width: 179px;
+                        height: 172px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px){
+    .sales{
+        .row{
+            .col-lg-6{
+                width: 100%;
+            }
+        }
+    }
+}

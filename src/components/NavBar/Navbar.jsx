@@ -10,10 +10,10 @@ export default function Navbar() {
       fetch('http://localhost:3003/api/category')
       .then(res=>res.json())
       .then(data=>{
-        console.log(data)
         setCategory(data)
       })
   },[])
+  
   return (
     <navbar className="navbar">
         <div className="container">
@@ -27,11 +27,11 @@ export default function Navbar() {
                     {
                       category.map(item=>{
                         return(
-                          <li key={item._id}>
-                            <div className="nav__items">
-                              <img src={`http://localhost:3003/${item.Image}`} alt="category" />
-                              <span>{item.title}</span>
-                            </div>
+                            <li onClick={()=>setShow(false)} key={item._id}>
+                              <Link to={`/getproducts/${item._id}`} className="nav__items">
+                                <img src={`http://localhost:3003/${item.Image}`} alt="category" />
+                                <span>{item.title}</span>
+                              </Link>
                           </li>
                         )
                       })

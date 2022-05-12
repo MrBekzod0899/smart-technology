@@ -1,6 +1,8 @@
 //**************** Font Family ***************\\
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&display=swap');
 //**************** Font Family ***************\\
+@import './var'; 
+
 *{
     margin: 0;
     padding: 0;
@@ -8,9 +10,26 @@
     font-family: 'Exo 2',sans-serif;
 }
 
-@import './var'; 
+.container{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    .row{
+        width: 100%;
+        margin: 0;
+        padding: 0
+    }
+}
+
 body{ 
  box-sizing: border-box;
+
+}
+h4{
+    padding-left: 0 !important;
+    color: $title-text;
+    font-weight: 700 !important;
+    margin: 10px 0  !important;
 }
 a{
     text-decoration: none;
@@ -68,5 +87,40 @@ ul li a{
     .container{
         width: 90%;
         margin:0 auto;
+    }
+}
+@media (min-width:1024px) {
+    .container{
+        width: 90%;
+        margin:0 auto;
+    }
+    .col-lg-12{
+        @include fb(100%);
+        padding:0 10px; 
+    }
+   .col-lg-9{
+        @include fb(75%);
+        padding:0 10px; 
+    }
+    .col-lg-6{
+        @include fb(50%);
+        padding:0 10px; 
+    }
+    .col-lg-3{
+        @include fb(25%);
+        padding:0 10px; 
+    }
+    .col-lg-4{
+        @include fb(33.33%);
+        padding:0 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .home{
+        .container{
+            width: 100% !important;
+            margin: 0 !important;
+        }
     }
 }

@@ -3,7 +3,10 @@
     background: $menubar;
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    a{
+        text-decoration: none;
+    }
     .container{
         display: flex;
         align-items: center;
@@ -28,21 +31,27 @@
                     display: none;
                     flex-direction: column;
                     left: 0;
+                    padding-left: 0;
                     top: 100%;
                     width: 100%;
                     position: absolute;
-                    background: #EDF2F6;
+                    background: #EDF2F6 !important;
                     transition: .4s;
+                    z-index:10;
                    li{
                         display: flex;
                         align-items: center;
+                        justify-content: flex-start;
                         .nav__items{
                             height: 100%;
                             padding: 8px;
                             display: flex;
                             align-items: center;
+                            color: black;
                             img{
-                                padding: 0 18px;
+                                width: 40px;
+                                margin: 0 18px;
+                                height: 40px;
                             }
                             span{
                                 font-size: 16px;
@@ -62,7 +71,6 @@
             }
             .col-9{
                 background: $menubar;
-                width: 100%;
                 ul{
                     padding: 0 24px;
                     width: 100%;
@@ -89,5 +97,11 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width:768px) {
+    .navbar{
+        display: none !important;
     }
 }

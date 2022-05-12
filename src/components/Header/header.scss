@@ -4,6 +4,9 @@
     .container{
         @include center;
         .col-9{
+            .list-head{
+                display: flex
+            }
             @include center; 
             .auth{
                 font-size: 16px;
@@ -47,4 +50,26 @@
                 border: unset !important;
             }
      }
+}
+
+@media (max-width:768px) {
+    .header{
+        .container{
+            max-width: unset;
+            align-items: flex-end;
+            .row{
+                display: flex;
+                justify-content: space-between;
+                .col-9{
+                    justify-content: right;
+                }
+                .header__contact{
+                    display:none
+                }
+                .header__search{
+                    display: none;
+                }
+            }
+        }
+    }
 }
