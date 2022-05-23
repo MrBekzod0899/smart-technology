@@ -15,6 +15,37 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js">
+      var splide = new Splide( '#main-carousel', {
+          pagination: false,
+        } );
+
+        var thumbnails = document.getElementsByClassName( 'thumbnail' );
+        var current;
+
+        for ( var i = 0; i < thumbnails.length; i++ ) {
+          initThumbnail( thumbnails[ i ], i );
+        }
+
+        function initThumbnail( thumbnail, index ) {
+          thumbnail.addEventListener( 'click', function () {
+            splide.go( index );
+          } );
+        }
+
+        splide.on( 'mounted move', function () {
+          var thumbnail = thumbnails[ splide.index ];
+
+          if ( thumbnail ) {
+            if ( current ) {
+              current.classList.remove( 'is-active' );
+            }
+
+            thumbnail.classList.add( 'is-active' );
+            current = thumbnail;
+          }
+        } );
+        splide.mount();
+    </script>
   </body>
 </html>

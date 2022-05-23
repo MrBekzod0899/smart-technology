@@ -1,7 +1,7 @@
 import React from "react";
 import "./sales.scss";
-export const Sales = ({item}) => {
-    console.log(item)
+
+const Sales = ({item}) => {
   return (
     <div className="sales container mt-4">
       <div className="row">
@@ -23,3 +23,5 @@ export const Sales = ({item}) => {
     </div>
   );
 };
+
+export default Sales

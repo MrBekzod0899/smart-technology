@@ -1,28 +1,8 @@
-import React, { useEffect,useState} from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+
 import Product from './Product';
 
-const Products = ({title}) => {
-    let {id}=useParams()
-    let [products,setProducts]=useState([])
-    useEffect(()=>{
-        if(id){
-            fetch(`http://localhost:3003/api/getproducts/${id}`)
-            .then(res=>res.json())
-            .then(data=>{
-                setProducts(data)
-                console.log(data)
-            })
-        }
-        else{
-            fetch(`http://localhost:3003/api/getproducts/`)
-            .then(res=>res.json())
-            .then(data=>{
-                setProducts(data)
-            }) 
-        }
-    },[id])
-
+const Products = ({title,products}) => {
     return (
         <div className='container mt-4'>
             <div className="row">

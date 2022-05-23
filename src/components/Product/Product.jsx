@@ -65,7 +65,7 @@ const Product = ({product}) => {
             </button>
           </div>
         </div>
-      </div> :<h1>Nothing Found</h1>
+      </div> : <h1>Nothing Found</h1>
       }
     </div>
   );

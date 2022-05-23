@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header';
 import Navbar from './components/NavBar'
-import Products from './components/Product/Products';
+import GetProducts from './pages/GetProducts/GetProducts';
 import Home from './pages/Home/Home'
 import { ProductPage } from './pages/Product/ProductPage';
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
             <Navbar/>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/getproducts/:id' element={<Products/>}/>
+                <Route path='/getproducts/:id' element={<GetProducts/>}/>
                 <Route path='/product/:id' element={<ProductPage/>}/>
             </Routes>
             <Footer/>
