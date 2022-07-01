@@ -5,7 +5,7 @@
         @include center;
         .col-9{
             .list-head{
-                display: flex
+                display: flex;
             }
             @include center; 
             .auth{
@@ -50,6 +50,28 @@
                 border: unset !important;
             }
      }
+}
+
+@media (max-width:954px) {
+    .header{
+        .container{
+            max-width: unset;
+            align-items: flex-end;
+            .row{
+                display: flex;
+                justify-content: space-between;
+                .col-9{
+                    justify-content: right;
+                }
+                .header__contact{
+                    display:none
+                }
+                .header__search{
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width:768px) {

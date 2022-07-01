@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./productpage.scss";
+
 const Product = ({ product }) => {
   const [count, setCount] = useState(0);
 
+  console.log(product)
   const changeImage = (index) => {
     setCount(index);
   };
@@ -35,9 +37,17 @@ const Product = ({ product }) => {
       }
     });
   };
+  
   useEffect(() => {
+    document.querySelector('.opisaniya').innerHTML=''
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
+     document.querySelector('.opisaniya').innerHTML+=`${product[0].text}`
     opacityChange(count);
-  }, [count]);
+  }, [product,count]);
 
   const opacityChange = (count) => {
     const items = Array.from(document.querySelectorAll(`[data-item]`));
@@ -50,9 +60,9 @@ const Product = ({ product }) => {
     });
   };
   return (
-    <div className="container">
+    <div className="container-fluid container-lg container-xlg">
       <div className="row product-carousel">
-        <div className="col-lg-4 col-md-4 col-sm-6 col-12">
+        <div className="col-lg-4 col-md-4 col-sm-12 col-12">
           <section
             id="main-carousel"
             className="slide-section"
@@ -83,8 +93,8 @@ const Product = ({ product }) => {
         </div>
         <div className="col-lg-8 col-md-8 col-sm-12 col-12">
           <div className="row">
-            <div className="col-md-12">
-              <h3>Гироскутер Smart Balance Well 6.5 Хип-Хоп (АКВАЗАЩИТА)</h3>
+            <div className="col-md-12 product-titles">
+              <h3>{product[0].title && product[0].title.length >=50 ? product[0].title.slice(0,50) : product[0].title }</h3>
             </div>
           </div>
           <div className="product-info">
@@ -115,7 +125,7 @@ const Product = ({ product }) => {
                     src={require("../../assets/img/message-square.svg").default}
                     alt="star"
                   />
-                  <span>(17)</span>
+                  <span>({product[0].review.length})</span>
                 </div>
               </div>
               <div className="right-info-head">
@@ -136,18 +146,18 @@ const Product = ({ product }) => {
             <div className="info-center">
               <div className="left-info-center">
                 <div className="foot-info-top">
-                  <span>5400 ₽</span>
+                  <span>{product[0].price}₽</span>
                   <span>
-                    <span>20%</span>
-                    <span>-1000%</span>
+                    <span>{product[0].sale} %</span>
+                    <span>-{product[0].price*product[0].sale/100} ₽</span>
                   </span>
                 </div>
                 <div className="foot-info-bottom">
-                  <h4>13 990 ₽</h4>
+                  <h4>{product[0].price - product[0].price*product[0].sale/100} ₽</h4>
                 </div>
               </div>
               <div className="right-info-center">
-                <button className="btn light text-light me-4">B корзину</button>
+                <button className="btn light text-light me-4" >B корзину</button>
                 <button className="btn outline">Купить в 1 клик</button>
               </div>
             </div>
@@ -187,87 +197,32 @@ const Product = ({ product }) => {
             <span>Характеристики</span>
           </li>
           <li className="tabs-item" onClick={() => tabsFunc(2)}>
-            <span>Отзывы (1)</span>
+            <span>Отзывы ({product[0].review.length})</span>
           </li>
         </ul>
         <div className="col-lg-12 col-sm-12 col-12 tabs-info show">
           <div className="tabs-title">
-            Описание гироскутера Smart Balance Well 6.5
+            Описание {product[0].title}
           </div>
-          <div className="tabs-content">
-            <span>
-              Вопрос безопасности всегда стоит очень остро, в этом году
-              производители решили его следующим образом — снабдили модель
-              качественной задней и передней подсветкой, поэтому пользователь
-              может не переживать о том, что его будет незаметно на дороге
-              в тёмное время суток. На руле имеется яркий качественный дисплей,
-              где отображается вся актуальная и необходимая информация —
-              скорость, пробег и др. Кроме того, на руле имеется кнопка
-              включения и выключения подсветки, звуковой сигнал и кнопка
-              настроек. Таким образом, все необходимое для управления самокатом
-              находится у пользователя под рукой. Для комфорта прогулок
-              электросамокат снабжён передним и задним амортизаторами. Вы можете
-              перемещаться не только по ровному городскому асфальту,
-              но и по неровностям, которые не затруднят ваше перемещение.
-              Складной механизм и небольшой вес (11 кг) делают модель
-              эргономичной. В сложенном виде самокат занимает совсем мало
-              места — его легко перевозить как в багажнике машины,
-              так и в общественном транспорте. При складывании самокат
-              фиксируется с помощью крючка к заднему крылу. А для того,
-              чтобы разложить его, необходимо, нажав на заднее крыло, приподнять
-              руль. Характерный щелчок говорит о том, что самокат разложен
-              полностью и готов к эксплуатации. Стоит отметить,
-              что электросамокат очень быстро стартует — вам не надо
-              отталкиваться или разгоняться. Выдерживает до 120 кг, в процессе
-              изготовления использовались только качественные материалы.
-              Быстрый, лёгкий, компактный — прекрасный выбор для ценителей
-              удобства!
-            </span>
+          <div className="tabs-content ">
+            <div className="opisaniya"></div>
           </div>
         </div>
         <div className="col-lg-12 col-sm-12 col-12 tabs-info">
           <div className="tabs-title">
-            Характеристики гироскутера Smart Balance Well 6.5
+            Характеристики <span>{product[0].title}</span>
           </div>
-          <div className="tabs-content">
-            <span>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Laudantium blanditiis dolor labore vel reiciendis nesciunt nihil,
-              dignissimos quaerat id explicabo temporibus mollitia aperiam.
-              Provident cupiditate, similique fugiat vero ex eius alias. Earum
-              ad velit aperiam consectetur error! Veritatis at reprehenderit
-              animi maxime nesciunt rerum ullam ex neque similique! Quas saepe
-              voluptatem nostrum illum esse tenetur veniam debitis excepturi
-              dolores laboriosam repudiandae ad quo quis neque nemo, atque
-              earum? Nam corrupti reiciendis rerum magnam autem officia nostrum
-              molestiae. Provident eum harum iure sit, sequi pariatur a tenetur
-              ratione molestias, delectus quasi eius nobis veniam aliquam
-              laudantium dolorem fuga, eaque vel suscipit doloribus et est!
-              Officia nihil excepturi voluptate maxime magni sint neque, vitae
-              rem, atque quidem aliquam necessitatibus dolorum placeat sed amet
-              omnis itaque laudantium repellat magnam exercitationem! Beatae
-              voluptatibus obcaecati doloremque, modi quibusdam autem qui neque
-              sequi commodi animi voluptas nesciunt in odit tenetur. Non
-              necessitatibus qui repudiandae laudantium ex omnis, repellat eum
-              molestiae accusamus molestias nobis quas temporibus doloribus
-              aliquid adipisci quia laboriosam reiciendis minima quisquam
-              impedit iusto itaque facere dicta. Aspernatur fuga ullam nemo
-              accusantium mollitia blanditiis qui error, laboriosam corporis
-              fugiat laudantium a incidunt impedit quaerat corrupti amet esse
-              enim magni, saepe cumque quia! Molestias corrupti et,
-              necessitatibus nesciunt nobis veritatis quasi rem. Voluptatum
-              dolorum quas molestiae nobis, ullam minima dolore at magni
-              quisquam nam? Id explicabo, blanditiis aspernatur nostrum
-              cupiditate doloremque a eum dignissimos cumque totam voluptas rem
-              doloribus reiciendis sint ipsa, culpa ex et quos, ea dolorum? In
-              quod magni culpa. At repellendus veritatis doloribus aspernatur
-              iure provident illum consectetur, eum itaque porro quasi dicta
-              fuga ratione est quam aut molestiae voluptate nihil necessitatibus
-              id quia maxime? Quo rerum placeat quis earum! Quo, at consectetur
-              officiis dicta facilis debitis? Error provident ducimus, iste sunt
-              dolorum eveniet tempora ea praesentium modi ipsum eligendi omnis
-              dolore ullam!
-            </span>
+          <div className="tabs-content character">
+              <ul className="list">
+                {
+                  product[0].attributes &&
+                  product[0].attributes.map((item,index)=>{
+                    return(
+                      <li><span><b>{item.attribut.title}</b></span><span>{item.value}</span></li>
+                    )
+                })
+                }
+              </ul>
           </div>
         </div>
         <div className="col-lg-12 col-sm-12 col-12 tabs-info">
@@ -317,26 +272,7 @@ const Product = ({ product }) => {
               quaerat dolore perferendis ratione eveniet rem suscipit molestiae
               natus accusamus qui iure voluptatibus mollitia, tempore pariatur
               architecto ipsam aspernatur eaque laudantium odio minima sit
-              soluta repellat? Totam non voluptate esse aspernatur dicta
-              voluptatem quo! A cum tempore quibusdam accusantium mollitia eius
-              dolor enim repellat minus nisi, velit architecto, suscipit illum
-              ipsam nobis assumenda quam magnam, corrupti maxime? Atque beatae
-              sapiente quaerat quis, aliquid eveniet animi obcaecati ab quas rem
-              sequi iusto ipsam earum corporis, esse illum ut eos officiis
-              possimus a dolorem natus optio! Excepturi, quasi fuga debitis
-              optio molestiae exercitationem labore eligendi blanditiis
-              voluptatum praesentium in sapiente atque voluptatibus illo? Maxime
-              illo commodi doloribus voluptatem, vitae mollitia pariatur ipsam
-              repellendus natus odit numquam autem culpa corrupti qui eligendi,
-              molestias voluptas sed perspiciatis amet. Quas temporibus et
-              eaque, dolorum aperiam totam obcaecati iusto ipsa ex sequi illum
-              officia. A facere nobis quibusdam ab magni harum excepturi tenetur
-              quae, similique consequatur, veritatis vel adipisci, expedita
-              voluptate. Libero dolor quaerat tempora natus, deleniti a dolorum
-              aliquam distinctio odit fugit velit sapiente minima ducimus
-              itaque! Quisquam, eligendi suscipit? Ad officiis ipsum inventore
-              unde, facere doloribus ipsa rem dicta voluptatem minus commodi
-              illo odit, omnis quis.
+              soluta repellat? 
             </span>
           </div>
         </div>

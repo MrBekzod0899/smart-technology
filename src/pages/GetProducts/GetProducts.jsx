@@ -6,6 +6,11 @@ import Products from '../../components/Product/Products'
     let {id}=useParams()
     let [products,setProducts]=useState([])
     useEffect(()=>{
+        window.scroll({
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+           });
         if(id){
             fetch(`http://localhost:3003/api/getproducts/${id}`)
             .then(res=>res.json())

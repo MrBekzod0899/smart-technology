@@ -41,7 +41,7 @@ export default function Navbar() {
               <div className="col-9">
                   <ul>
                     <li>
-                      <Link to='/'>O компании</Link>
+                      <Link to='/about'>O компании</Link>
                     </li>
                     <li>
                       <Link to='/'>Акции</Link>
@@ -50,7 +50,7 @@ export default function Navbar() {
                       <Link to='/'>Рассрочка 0|0|18</Link>
                     </li>
                     <li>
-                      <Link to='/'>Сервис и гарантия</Link>
+                      <Link to='/service'>Сервис и гарантия</Link>
                     </li>
                     <li>
                       <Link to='/'>Опт/дропшиппинг</Link>

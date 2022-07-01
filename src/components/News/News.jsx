@@ -7,7 +7,7 @@ const News = () => {
   return (
     <div className="news container mt-4">
       <div className="row">
-        <h4>Novosti</h4>
+        <div className="news"><h4>Novosti</h4><Link to='/news'>all news</Link></div>
         <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
           <div className="news-title">
             <h4>Открытие нового магазина</h4>
@@ -20,7 +20,7 @@ const News = () => {
             </p>
           </div>
           <div className="news-footer">
-              <Link to='/'><span>Подробнее</span><i className="fas fa-angle-right"></i></Link>
+              <Link to='/news'><span>Подробнее</span><i className="fas fa-angle-right"></i></Link>
               <span>{dates.getDate()}/{dates.getUTCMonth()}/{dates.getFullYear()}</span>
           </div>
         </div>
@@ -36,7 +36,7 @@ const News = () => {
             </p>
           </div>
           <div className="news-footer">
-              <Link to='/'><span>Подробнее</span>
+              <Link to='/news'><span>Подробнее</span>
               <i className="fas fa-angle-right"></i></Link>
               <span>{dates.getDate()}/{dates.getUTCMonth()}/{dates.getFullYear()}</span>
           </div>

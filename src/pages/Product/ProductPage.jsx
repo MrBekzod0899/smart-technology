@@ -6,6 +6,7 @@ import './productpage.scss'
 
 export const ProductPage=()=>{
     const {id}=useParams()
+    
     let [products,setProducts]=useState([])
     const [product,setProduct]=useState([
       {
@@ -18,12 +19,12 @@ export const ProductPage=()=>{
       fetch(`http://localhost:3003/api/product/${id}`)
        .then(res=>res.json())
        .then(data=>{
-           setProduct(data)
+           setProduct(data[0])
        })
-       fetch(`http://localhost:3003/api/getproducts/`)
+       fetch(`http://localhost:3003/api/product/${id}`)
           .then(res=>res.json())
           .then(data=>{
-              setProducts(data)
+              setProducts(data[1])
        }) 
     },[id])
   

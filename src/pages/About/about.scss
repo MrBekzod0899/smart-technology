@@ -1,0 +1,98 @@
+.about {
+    background: #e5e5e5;
+
+    .row {
+        .col-lg-12 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .about-title,
+    .bigtitle {
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 120%;
+        margin: 10px 0;
+    }
+
+    .about-text {
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        margin: 20px 0;
+    }
+
+    .bigtitle {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .about-rek {
+        background: #EDF2F6;
+
+        .container {
+            .row {
+                padding: 40px 0;
+
+                .col-12 {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: flex-start;
+
+                    .reklama-content {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin:30px 0;
+                        .reklama-left {
+                            img {
+                                width: 48px;
+                                height: 48px;
+                            }
+
+                            margin-right: 10px;
+                        }
+
+                        .reklama-right {
+                            font-family: 'Exo 2';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 130%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .viewblogs {
+        .row {
+            .news-right {
+                .newstitle {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:576px) {
+    .viewblogs {
+        .row {
+            .news-right {
+                .newstitle {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}

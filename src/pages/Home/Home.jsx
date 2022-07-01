@@ -36,6 +36,11 @@ export default function Home() {
   let [products,setProducts]=useState([])
   console.log(id)
   useEffect(()=>{
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
       if(id){
           fetch(`http://localhost:3003/api/getproducts/${id}`)
           .then(res=>res.json())
