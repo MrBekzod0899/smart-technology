@@ -12,14 +12,14 @@ import Products from '../../components/Product/Products'
             behavior: 'smooth' 
            });
         if(id){
-            fetch(`http://localhost:3003/api/getproducts/${id}`)
+            fetch(`${process.env.BASE_URL}/getproducts/${id}`)
             .then(res=>res.json())
             .then(data=>{
                 setProducts(data)
             })
         }
         else{
-            fetch(`http://localhost:3003/api/getproducts/`)
+            fetch(`${process.env.BASE_URL}/getproducts/`)
             .then(res=>res.json())
             .then(data=>{
                 setProducts(data)

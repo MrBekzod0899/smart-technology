@@ -1,0 +1,30 @@
+.error{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    background-color: white !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error-image{
+    width: 50%;
+    height: 100%;
+    background-image: url('../../assets/5a0c69ce82e02d31ecb8d013.png');
+    background-size: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.error-context a{
+    background-color: rgb(6, 6, 81);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px 15px;
+}

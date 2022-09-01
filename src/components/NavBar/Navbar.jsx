@@ -7,7 +7,7 @@ export default function Navbar() {
   
 
   useEffect(()=>{
-      fetch('http://localhost:3003/api/category')
+      fetch(`${process.env.BASE_URL}/api/category`)
       .then(res=>res.json())
       .then(data=>{
         setCategory(data)

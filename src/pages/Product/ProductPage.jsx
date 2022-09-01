@@ -16,12 +16,12 @@ export const ProductPage=()=>{
     ])
     
     useEffect(()=>{
-      fetch(`http://localhost:3003/api/product/${id}`)
+      fetch(`${process.env.BASE_URL}/api/product/${id}`)
        .then(res=>res.json())
        .then(data=>{
            setProduct(data[0])
        })
-       fetch(`http://localhost:3003/api/product/${id}`)
+       fetch(`${process.env.BASE_URL}/api/product/${id}`)
           .then(res=>res.json())
           .then(data=>{
               setProducts(data[1])

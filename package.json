@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:server": "scp -r build root@188.225.39.166:/var/www/bekzod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

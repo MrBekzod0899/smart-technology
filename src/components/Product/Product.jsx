@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./product.scss";
 const Product = ({product}) => {
     var styleBackground={
-      backgroundImage:product ? `url('http://localhost:3003/${product.photos[0]}')` : '' 
+      backgroundImage:product ? `url('${process.env.BASE_URL}/${product.photos[0]}')` : '' 
     }
   return (
     <div className="product">

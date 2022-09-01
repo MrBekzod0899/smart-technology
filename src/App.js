@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header';
 import Navbar from './components/NavBar'
@@ -24,6 +25,7 @@ export default function App() {
                 <Route path='/news/:id' element={<ViewBlog/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/service' element={<Service/>}/>
+                <Route path='*' element={<ErrorPage/>}/>
             </Routes>
             <Footer/>
         </BrowserRouter>

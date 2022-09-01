@@ -42,14 +42,14 @@ export default function Home() {
       behavior: 'smooth' 
      });
       if(id){
-          fetch(`http://localhost:3003/api/getproducts/${id}`)
+          fetch(`https://bekzod.umarakbarov.uz/api/getproducts/${id}`)
           .then(res=>res.json())
           .then(data=>{
               setProducts(data)
           })
       }
       else{
-          fetch(`http://localhost:3003/api/getproducts/`)
+          fetch(`https://bekzod.umarakbarov.uz/api/getproducts/`)
           .then(res=>res.json())
           .then(data=>{
               setProducts(data)
